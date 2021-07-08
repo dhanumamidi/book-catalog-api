@@ -8,6 +8,7 @@ const app =  express();
 const port = 4000;
 
 app.use(cors())
+app.set('port', (process.env.PORT || port));
 
 let typeDefs: any = [`
   type Query {
@@ -35,4 +36,4 @@ app.use(
         graphiql: true
     })
 );
-app.listen(port, () => console.log(`Node Graphql API listening on port ${port}!`));
+app.listen(app.get('port'), () => console.log(`Node Graphql API listening on port ${app.get('port')}!`));
