@@ -35,5 +35,5 @@ app.use(
         schema: schema,
         graphiql: true
     })
-);
+);  
 app.listen(app.get('port'), () => console.log(`Node Graphql API listening on port ${app.get('port')}!`));
